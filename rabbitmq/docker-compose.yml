@@ -1,0 +1,12 @@
+version: "3.3"
+
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - 4369:4369
+      - 5672:5672 #http
+      - 15672:15672 #amqp
+    volumes:
+      - ./config/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf
+    #  - ./data/rabbitmq/.erlang.cookie:/var/lib/rabbitmq/.erlang.cookie
